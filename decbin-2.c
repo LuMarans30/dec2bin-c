@@ -1,20 +1,21 @@
 #include <stdio.h>
-#define MAXINT 2147483648
+#include <limits.h>
+
+unsigned long long toBin(unsigned long long decimale)
+{
+    unsigned long long m = decimale ? toBin(decimale / 2) : 0;
+    printf("%d", (int)(decimale % 2));
+    return m;
+}
+
 int main(){
-  unsigned long dec;
-  int k;
-  unsigned long mask;
-  printf("\nImmettere un valore decimale--> ");
-  scanf("%lu",&dec);
-  printf("\nIl numero binario e'--> ");
-  for(mask=MAXINT,k=0;mask;mask=mask>>1,k++)
-  {
-    if(k%4==0)
-      printf(" ");
-    if(dec&mask)
-      printf("1");
-    else
-      printf("0");
-  }
-  return 0;
+    unsigned long long dec;
+    int k;
+    char binary[64];
+    printf("\nImmettere un valore decimale--> ");
+    scanf("%llu",&dec);
+    printf("\nIl numero binario e'--> ");
+    toBin(dec);
+
+    return 0;
 }
