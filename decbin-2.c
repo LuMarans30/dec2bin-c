@@ -10,7 +10,6 @@ unsigned long long toBin(unsigned long long decimale)
 
 int main(){
     unsigned long long dec;
-
     printf("\nImmettere un valore decimale--> ");
     scanf("%llu",&dec);
     printf("\nIl numero binario e'--> ");
